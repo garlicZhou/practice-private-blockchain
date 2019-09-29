@@ -7,9 +7,10 @@ const Block = require('./Block.js');
 
 let myBlockChain = new BlockChain.Blockchain();
 
-setTimeout(function () {
-	console.log("Waiting...")
-}, 10000);
+// setTimeout(function () {
+// 	console.log("Waiting...")
+// }, 10000);
+
 
 /******************************************
  ** Function for Create Tests Blocks   ****
@@ -25,7 +26,7 @@ setTimeout(function () {
 // 			i++;
 // 			if (i < 10) theLoop(i);
 // 		});
-// 	}, 10000);
+// 	}, 1000);
 //   })(0);
 
 //myBlockChain.addBlock(new Block.Block("1"));
@@ -34,10 +35,10 @@ setTimeout(function () {
  ***********************************************/
 
 
-// Be careful this only will work if `getBlockHeight` method in Blockchain.js file return a Promise
-myBlockChain.getBlockHeight().then((height) => {
-	console.log(height);
-}).catch((err) => { console.log(err);});
+//Be careful this only will work if `getBlockHeight` method in Blockchain.js file return a Promise
+// myBlockChain.getBlockHeight().then((height) => {
+// 	console.log(height);
+// }).catch((err) => { console.log(err);});
 
 
 /***********************************************
@@ -46,7 +47,7 @@ myBlockChain.getBlockHeight().then((height) => {
 
 
 //Be careful this only will work if `getBlock` method in Blockchain.js file return a Promise
-// myBlockChain.getBlock(3).then((block) => {
+// myBlockChain.getBlock(6).then((block) => {
 // 	console.log(JSON.stringify(block));
 // }).catch((err) => { console.log(err);});
 
@@ -57,7 +58,7 @@ myBlockChain.getBlockHeight().then((height) => {
 
 
 // Be careful this only will work if `validateBlock` method in Blockchain.js file return a Promise
-// myBlockChain.validateBlock(7)
+// myBlockChain.validateBlock(5)
 // 	.then((valid) => {
 // 	console.log(valid);
 // })
@@ -73,8 +74,8 @@ myBlockChain.getBlockHeight().then((height) => {
 // 	blockAux.body = "Tampered Block";
 // 	myBlockChain._modifyBlock(blockAux.height, blockAux).then((blockModified) => {
 // 		if(blockModified){
-// 			myBlockChain.validateBlock(blockAux.height).then((valid) => {
-// 				console.log(`Block #${blockAux.height}, is valid? = ${valid}`);
+// 			myBlockChain.validateBlock(blockAux.height).then(({isValidBlock, block}) => {
+// 				console.log(`Block #${blockAux.height}, is valid? = ${isValidBlock}`);
 // 			})
 // 			.catch((error) => {
 // 				console.log(error);
@@ -102,7 +103,7 @@ myBlockChain.getBlockHeight().then((height) => {
  ***********************************************/
 
 
-// Be careful this only will work if `validateChain` method in Blockchain.js file return a Promise
+//Be careful this only will work if `validateChain` method in Blockchain.js file return a Promise
 // myBlockChain.validateChain().then((errorLog) => {
 // 	if(errorLog.length > 0){
 // 		console.log("The chain is not valid:");

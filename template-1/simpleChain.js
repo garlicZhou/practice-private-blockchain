@@ -78,7 +78,7 @@ class Blockchain{
    // Validate blockchain
     validateChain(){
       let errorLog = [];
-      for (var i = 0; i < this.chain.length-1; i++) {
+      for (let i = 0; i < this.chain.length-1; i++) {
         // validate block
         if (!this.validateBlock(i))errorLog.push(i);
         // compare blocks hash link

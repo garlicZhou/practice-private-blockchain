@@ -44,7 +44,7 @@ class LevelSandbox {
     // Method that return the height
     getBlocksCount() {
         let self = this;
-        return new Promise(function(resolve, reject){
+        return new Promise(function(resolve, reject) {
             // Add your code here, remember in Promises you need to resolve() or reject()
             let height = 0;
             self.db.createReadStream()
@@ -59,8 +59,28 @@ class LevelSandbox {
                 });
         });
     }
-        
-
 }
+
+// const levelSandBox = new LevelSandbox();
+// (function testAddLevelDBData() {
+//     levelSandBox.addLevelDBData(1 ,'sd')
+//         .then(result => {
+//             console.log(result);
+//         });
+// })();
+
+// (function testGetLevelDBData() {
+//     levelSandBox.getLevelDBData(2)
+//         .then(function (result) {
+//             console.log(result);
+//         });
+// })();
+
+// (function testGetBlocksCount() {
+//     levelSandBox.getBlocksCount()
+//         .then(result => {
+//             console.log(result);
+//         });
+// })();
 
 module.exports.LevelSandbox = LevelSandbox;

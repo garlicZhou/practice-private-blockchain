@@ -109,3 +109,11 @@ This function validates the whole chain and return a list of errors found during
 * I was able to identify the basic data model for a Blockchain application.
 * I was able to use LevelDB to persist the Blockchain data.
 * I was able to write algorithms for basic operations in the Blockchain.
+
+## 遇到问题
+
+* 回调函数是作为函数参数的函数，主函数执行完之后才会执行回调函数
+* nodejs遇到异步操作的时候，会将其存放到事务队列里，然后继续向下执行代码，主程序执行完再去执行事务队列
+* Promise返回的值需要调用它的then函数进行获取
+
+
